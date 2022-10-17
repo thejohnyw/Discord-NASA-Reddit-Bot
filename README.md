@@ -28,6 +28,9 @@ INSTRUCTIONS IN TERMINAL
 6. 
     login into discord and join this server link for demo: https://discord.gg/EFeGRYD496
 
+IMPORTANT NOTE: FOR BOT TO RUN, I NEED TO SEND YOU THE .env FILE WITH PASSWORDS & API KEYS
+
+
 you're welcome to use this discord account:
 
 username: bot_tester#0350
