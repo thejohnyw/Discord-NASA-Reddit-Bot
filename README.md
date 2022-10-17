@@ -13,7 +13,7 @@ INSTRUCTIONS IN TERMINAL
 
 3.
   
-    cd Downloads/Discord-NASA-Reddit-Bot
+    cd Discord-NASA-Reddit-Bot
 
 4.
 
