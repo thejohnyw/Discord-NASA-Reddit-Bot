@@ -36,7 +36,7 @@ posts = [] #temporary memory of what discord bot sends so that it can post the m
 
 #generate a random date for NASA Astronomy pic
 def randomdate():
-    month, year = random.randint(1,12), random.randint(1995,2021)
+    month, year = random.randint(1,12), random.randint(1996,2021)
     days_in_month = {1:31, 2:28, 3:31, 4:29, 5:31, 6:30, 7:29, 8:31, 9:30, 10:31, 11:30, 12:30}
     if (year%4 == 0 and year%100 != 0) or (year%400 == 0): #leap year consideration
         days_in_month[2] = 29
@@ -48,7 +48,7 @@ def randomdate():
 def nasa_info(option, t_date=None): #parameters: option is what date you want: a random one, specific one, or today's date
     #--> t_date is optional parameter, used for specific date
     options_dict = {'random': randomdate(), 'specific': t_date, 'today': date.today()}
-    given_date = options_dict.get(option)
+    given_date = options_dict[option]
     call = 'https://api.nasa.gov/planetary/apod?date={}&hd=True&api_key={}'.format(given_date, nasa_key) #NASA APOD API
     r = requests.get(call)
     return r.json()["explanation"], \
@@ -97,7 +97,11 @@ async def on_message(message): #parameter: user's message
         posts.append(bot_reply)
         posts.append(pic)
     elif message.content.startswith(botID + " date: "):
-        descript, pic = nasa_info('specific', t_date=str(message.content[len(botID)+7::])) #takes t_date parameter as user input of numbers after "date: "
+        spec_date = message.content[len(botID)+7:] #date is value after " date: " (7 characters); ex: yyyy-mm-dd
+        if int(spec_date[:4]) not in range(1996,2022): #check if valid year
+            await message.channel.send('invalid date')
+            return
+        descript, pic = nasa_info('specific', t_date=spec_date) #takes t_date parameter as user input of date
         bot_reply = descript + "\n\n{}\n\n*".format(pic)
         posts.append(bot_reply)
         posts.append(pic)
