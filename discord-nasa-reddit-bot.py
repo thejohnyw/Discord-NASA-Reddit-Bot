@@ -44,7 +44,7 @@ def randomdate():
     date = str(year)+'-'+str(month)+'-'+str(day)
     return date
 
-#calls NASA API for picture on given date; returns picture and its description 
+#calls NASA API for picture on given date; returns HD picture and its description 
 def nasa_info(option, t_date=None): #parameters: option is what date you want: a random one, specific one, or today's date
     #--> t_date is optional parameter, used for specific date
     options_dict = {'random': randomdate(), 'specific': t_date, 'today': date.today()}
@@ -52,7 +52,7 @@ def nasa_info(option, t_date=None): #parameters: option is what date you want: a
     call = 'https://api.nasa.gov/planetary/apod?date={}&hd=True&api_key={}'.format(given_date, nasa_key) #NASA APOD API
     r = requests.get(call)
     return r.json()["explanation"], \
-        r.json()["hdurl"]
+        r.json()["hdurl"] 
 
 
 
@@ -87,32 +87,33 @@ async def on_message(message): #parameter: user's message
 
     if message.content == botID + " random":
         descript, pic = nasa_info('random')
-        bot_reply = descript + "\n\n{}\n\n*".format(pic)
-        posts.append(bot_reply) #appends bot's NASA messages to posts list
-        posts.append(pic)
+        
     elif message.content == botID + " today":
         descript, pic = nasa_info('today')
-        bot_reply = descript + "\n\n{}\n\n*".format(pic)
-        posts.append(bot_reply)
-        posts.append(pic)
+        
     elif message.content.startswith(botID + " date: "):
         spec_date = message.content[len(botID)+7:] #date is value after " date: " (7 characters); ex: yyyy-mm-dd
         if int(spec_date[:4]) not in range(1996,2022): #check if valid year
             await message.channel.send('invalid date')
             return
         descript, pic = nasa_info('specific', t_date=spec_date) #takes t_date parameter as user input of date
-        bot_reply = descript + "\n\n{}\n\n*".format(pic)
-        posts.append(bot_reply)
-        posts.append(pic)
+
     elif message.content == botID + " post":
         if posts:
             POST(posts[-2], posts[-1]) #post most recent nasa message/pic from bot to Reddit
-            bot_reply = 'Successfully posted to reddit!: https://www.reddit.com/user/nasadiscordredditbot '
+            await message.channel.send('Successfully posted to reddit!! View here: https://www.reddit.com/user/nasadiscordredditbot')
+            return
         else: #if user tries to post, but there's no bot-generated NASA APOD yet
-            bot_reply = 'Error: No previous APOD to post'
+            await message.channel.send('Error: No previous APOD to post')
+            return
+    
     else: #if user mentions bot but doesn't give any of above commands
-        bot_reply = 'Invalid command: command not found'
-
+        await message.channel.send('Invalid command: command not found')
+        return
+        
+    bot_reply = descript + "\n\n{}\n\n*".format(pic)
+    posts.append(bot_reply) #appends bot's NASA pics/messages to posts list
+    posts.append(pic)
     await message.channel.send(bot_reply)
     
         
