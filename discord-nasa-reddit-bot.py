@@ -92,7 +92,7 @@ async def on_message(message): #parameter: user's message
         descript, pic = nasa_info('today')
         
     elif message.content.startswith(botID + " date: "):
-        spec_date = message.content[len(botID)+7:] #date is value after " date: " (7 characters); ex: yyyy-mm-dd
+        spec_date = message.content[len(botID)+7:] #date is the value after " date: " (7 characters plus botID length); format: yyyy-mm-dd
         if int(spec_date[:4]) not in range(1996,2022): #check if valid year
             await message.channel.send('invalid date')
             return
