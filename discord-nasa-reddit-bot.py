@@ -81,15 +81,14 @@ async def on_member_join(member):
 #event for user sending a message/command
 @client.event
 async def on_message(message): #parameter: user's message
-    global posts #will append bot's NASA messages to posts list
-    
+
     if message.author == client.user or not message.content.startswith(botID): #checks for user message and makes sure discord bot won't message unless it is mentioned
         return
 
     if message.content == botID + " random":
         descript, pic = nasa_info('random')
         bot_reply = descript + "\n\n{}\n\n*".format(pic)
-        posts.append(bot_reply)
+        posts.append(bot_reply) #appends bot's NASA messages to posts list
         posts.append(pic)
     elif message.content == botID + " today":
         descript, pic = nasa_info('today')
@@ -107,7 +106,7 @@ async def on_message(message): #parameter: user's message
         posts.append(pic)
     elif message.content == botID + " post":
         if posts:
-            POST(posts[-2], posts[-1]) #post most recent nasa message from bot to Reddit
+            POST(posts[-2], posts[-1]) #post most recent nasa message/pic from bot to Reddit
             bot_reply = 'Successfully posted to reddit!: https://www.reddit.com/user/nasadiscordredditbot '
         else: #if user tries to post, but there's no bot-generated NASA APOD yet
             bot_reply = 'Error: No previous APOD to post'
