@@ -30,13 +30,6 @@ INSTRUCTIONS IN TERMINAL
 
 IMPORTANT NOTE: FOR BOT TO RUN, I NEED TO SEND YOU THE .env FILE WITH PASSWORDS & API KEYS
 
-
-you're welcome to use this discord account:
-
-username: bot_tester#0350
-
-password: dali_is_cool789
-
 Bot instructions:
 mention bot (@nasa_bot) then type the command as shown.
 
