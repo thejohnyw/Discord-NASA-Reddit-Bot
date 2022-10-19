@@ -30,8 +30,6 @@ def POST(description, pic):
 reddit = praw.Reddit(client_id = reddit_client, client_secret = reddit_secret,
     user_agent = 'nasa-discord bot', username = 'nasadiscordredditbot', password = reddit_pass, check_for_async = False)
 
-posts = [] #temporary memory of what discord bot sends so that it can post the most recent one to reddit
-
 
 
 #generate a random date for NASA Astronomy pic
@@ -62,6 +60,10 @@ client = discord.Client(intents=discord.Intents.all())
 
 botID = '<@1030953607073378415>' #allows for users to mention bot using @
 
+posts = [] #temporary memory of what discord bot sends so that it can post the most recent one to reddit
+
+instuctions = 'Welcome! I am NASA/Reddit Bot! To use my commands, mention me then type the command as shown. \n For a random Astronomy picture and description, "@nasa_bot random" \n For the picture of the day, "@nasa_bot today" \n For a specific date, "@nasa_bot date: year-month-day" \n If you really like the APOD, post it to reddit using "@nasa_bot post"'
+
 #event when bot ready: print to console that it's ready
 @client.event
 async def on_ready():
@@ -71,11 +73,7 @@ async def on_ready():
 @client.event
 async def on_member_join(member):
     await member.send(
-        'Welcome! I am NASA/Reddit Bot! To use my commands, mention me then type the command as shown. \n' +
-        'For a random Astronomy picture and description, "@nasa_bot random" \n' +
-        'For the picture of the day, "@nasa_bot today" \n' +
-        'For a specific date, "@nasa_bot date: year-month-day" \n' +
-        'If you really like the APOD, post it to reddit using "@nasa_bot post"'
+        instuctions
     )
 
 #event for user sending a message/command
@@ -107,8 +105,11 @@ async def on_message(message): #parameter: user's message
             await message.channel.send('Error: No previous APOD to post')
             return
     
+    elif message.content == botID + " commands":
+        await message.channel.send(instuctions)
+        return
     else: #if user mentions bot but doesn't give any of above commands
-        await message.channel.send('Invalid command: command not found')
+        await message.channel.send('Invalid command: command not found. Here are valid commands: ' + instuctions)
         return
         
     bot_reply = descript + "\n\n{}\n\n*".format(pic)
