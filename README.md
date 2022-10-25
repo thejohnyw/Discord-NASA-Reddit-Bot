@@ -1,6 +1,6 @@
-Discord Bot that generates NASA Astronomy Pic of the Day (APOD) and posts to Reddit upon mention!
+# Discord Bot that generates NASA Astronomy Pic of the Day (APOD) and posts to Reddit upon mention!
 
-INSTRUCTIONS IN TERMINAL
+### INSTRUCTIONS IN TERMINAL
 
 
 1.
@@ -28,10 +28,9 @@ INSTRUCTIONS IN TERMINAL
 6. 
     login into discord and join this server link for demo: https://discord.gg/EFeGRYD496
 
-IMPORTANT NOTE: FOR BOT TO RUN, I NEED TO SEND YOU THE .env FILE WITH PASSWORDS & API KEYS
+**IMPORTANT NOTE: FOR BOT TO RUN, I NEED TO SEND YOU THE .env FILE WITH PASSWORDS & API KEYS**
 
-Bot instructions:
-mention bot (@nasa_bot) then type the command as shown.
+## Bot instructions: mention bot (@nasa_bot) then type the command as shown.
 
   For a random Astronomy picture and description, "@nasa_bot random"
         
