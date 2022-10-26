@@ -42,7 +42,7 @@ def randomdate():
     date = str(year)+'-'+str(month)+'-'+str(day)
     return date
 
-#calls NASA API for picture on given date; returns HD picture and its description 
+#calls NASA API for picture on given date; returns picture and its description 
 def nasa_info(option, t_date=None): #parameters: option is what date you want: a random one, specific one, or today's date
     #--> t_date is optional parameter, used for specific date
     options_dict = {'random': randomdate(), 'specific': t_date, 'today': date.today()}
@@ -50,7 +50,7 @@ def nasa_info(option, t_date=None): #parameters: option is what date you want: a
     call = 'https://api.nasa.gov/planetary/apod?date={}&hd=True&api_key={}'.format(given_date, nasa_key) #NASA APOD API
     r = requests.get(call)
     return r.json()["explanation"], \
-        r.json()["hdurl"] 
+        r.json()["url"] 
 
 
 
