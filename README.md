@@ -48,7 +48,25 @@
 Reddit account that shows posts: https://www.reddit.com/user/nasadiscordredditbot
 
 
-## Video Demo pt1 starting script/commands
+## Demo pt1 starting script/commands
+<img width="1053" alt="Screenshot 2022-10-26 at 12 46 01 AM" src="https://user-images.githubusercontent.com/114613919/197936831-7f95b457-9d41-4fd5-a017-7601ac62562e.png">
+
+## part 2 commands
+<img width="952" alt="Screenshot 2022-10-26 at 12 48 02 AM" src="https://user-images.githubusercontent.com/114613919/197937112-01a73b4a-0723-4d77-a244-60cf4c991366.png">
+
+## part 3: demo
+### today command
+https://user-images.githubusercontent.com/114613919/197937698-291da8b1-3c40-47d7-a381-79c13788b639.mov
+### random command
+https://user-images.githubusercontent.com/114613919/197938036-4daf002f-6010-455a-b01e-370b929f0a55.mov
+### specific command
+https://user-images.githubusercontent.com/114613919/197938254-2a238425-aebb-4d07-8fd2-f3c64adf4e92.mov
+### posting command
+
+<img width="1200" alt="Screenshot 2022-10-26 at 12 57 22 AM" src="https://user-images.githubusercontent.com/114613919/197938589-c3d50bc6-88c2-4ffb-82de-decfaa549038.png">
+<img width="1312" alt="Screenshot 2022-10-26 at 12 57 45 AM" src="https://user-images.githubusercontent.com/114613919/197938601-7e9c313b-b3c2-45df-8c32-2e5fe1753623.png">
+
+
 
 
 
