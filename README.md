@@ -2,6 +2,7 @@
 
 ### INSTRUCTIONS IN TERMINAL
 
+**IMPORTANT NOTE: FOR BOT TO RUN, I NEED TO SEND YOU THE .env FILE WITH PASSWORDS & API KEYS**
 
 1.
 
@@ -26,9 +27,13 @@
  OR run file in IDE: discord-nasa-reddit-bot.py
 
 6. 
-    login into discord and join this server link for demo: https://discord.gg/EFeGRYD496
-
-**IMPORTANT NOTE: FOR BOT TO RUN, I NEED TO SEND YOU THE .env FILE WITH PASSWORDS & API KEYS**
+    Login into discord and join this server link for demo: https://discord.gg/EFeGRYD496
+        You're welcome to use this account that is already in the server:
+        email: bot.tester123456@gmail.com
+        password: dali_is_cool789
+    
+    or, invite the bot to your own server: https://discord.com/api/oauth2/authorize?client_id=1030953607073378415&permissions=8&scope=bot
+    
 
 ## Bot instructions: mention bot (@nasa_bot) then type the command as shown.
 
