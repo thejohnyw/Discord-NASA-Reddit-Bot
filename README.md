@@ -46,3 +46,11 @@
   If you really like the APOD, post it to reddit using "@nasa_bot post"
 
 Reddit account that shows posts: https://www.reddit.com/user/nasadiscordredditbot
+
+
+## Video Demo pt1 starting script/commands
+
+
+
+
+
