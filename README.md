@@ -31,11 +31,7 @@
     
     Or, invite the bot to your own server: https://discord.com/api/oauth2/authorize?client_id=1030953607073378415&permissions=8&scope=bot
     
-     You're welcome to use this account that is already in the server:
-     
-     email: bot.tester123456@gmail.com
-     
-     password: dali_is_cool789
+  
     
    
     
